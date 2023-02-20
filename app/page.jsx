@@ -4,9 +4,12 @@ import { useEffect, useRef, useState } from "react"
 import NET from 'vanta/dist/vanta.net.min'
 import * as THREE from 'three'
 import Navbar from "@/components/Navbar";
+import Home from "@/components/Home";
+import About from "@/components/About";
 
-export default function Home() {
+export default function Page() {
   const [vantaEffect, setVantaEffect] = useState(0);
+  const [currentPage,setCurrentPage] = useState('home')
   const vantaRef = useRef(null);
   useEffect(() => {
     if (!vantaEffect) {
@@ -37,7 +40,8 @@ export default function Home() {
   return (
     <div className='main' ref={vantaRef}>
       <div className="main-container h-screen bg-zinc-900/25 backdrop-blur-sm">
-        <Navbar/>
+        <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        {currentPage === 'home' ? <Home/> : currentPage === 'about' && <About/>}
       </div>
     </div>
   )

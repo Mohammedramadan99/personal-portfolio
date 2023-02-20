@@ -1,30 +1,43 @@
-import React from 'react'
+import Link from 'next/link'
+import React, { useState } from 'react'
 
-function Navbar() {
+function Navbar({currentPage,setCurrentPage}) {
+    const [links,setLinks] = useState([
+        {
+            title:"home",
+        },
+        {
+            title:"about",
+        },
+        {
+            title:"portfolio",
+        },
+        {
+            title:"contact",
+        },
+    ])
   return (
-    <div className='p-5 flex justify-around items-center backdrop-blur-lg'>
+    <nav className='p-5 flex flex-col gap-y-5 md:flex-row  justify-around items-center backdrop-blur-lg '>
         {/* logo */}
         <div className="font-semibold relative after:content-['Frontend'] after:absolute after:bottom-[-10px] after:left-0 after:text-xs after:text-red-600">
             Mohammed Ramadan 
         </div>
 
         {/* links */}
-        <ul className="flex gap-x-5 font-semibold ">
-            <li className='cursor-pointer capitalize hover:text-red-600 transition-all '>
-                home
-            </li>
-            <li className='cursor-pointer capitalize hover:text-red-600 transition-all '>
-                about
-            </li>
-            <li className='cursor-pointer capitalize hover:text-red-600 transition-all '>
-                portfolio
-            </li>
-            <li className='cursor-pointer capitalize hover:text-red-600 transition-all '>
-                contact
-            </li>
-            
-        </ul>
-    </div>
+        <div className="flex gap-x-5 font-semibold flex-wrap ">
+            {links.map(l => (
+                <Link
+                    key={l.title} 
+                    href='#'
+                    className={l.title === currentPage ?
+                        `cursor-pointer text-red-600 capitalize hover:text-red-600 transition-all ` :
+                        `cursor-pointer capitalize hover:text-red-600 transition-all`}
+                    onClick={() => setCurrentPage(l.title)} >
+                    {l.title}
+                </Link>
+            ))}
+        </div>
+    </nav>
   )
 }
 
