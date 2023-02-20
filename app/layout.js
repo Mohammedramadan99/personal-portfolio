@@ -1,6 +1,6 @@
 'use client'
 import { useEffect } from 'react'
-import './globals.css'
+import './globals.scss'
 
 export default function RootLayout({ children }) {
   useEffect(() => {

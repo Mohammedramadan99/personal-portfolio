@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import NET from 'vanta/dist/vanta.net.min'
 import * as THREE from 'three'
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const [vantaEffect, setVantaEffect] = useState(0);
@@ -35,7 +36,9 @@ export default function Home() {
   
   return (
     <div className='main' ref={vantaRef}>
-
+      <div className="main-container h-screen bg-zinc-900/25 backdrop-blur-sm">
+        <Navbar/>
+      </div>
     </div>
   )
 }
