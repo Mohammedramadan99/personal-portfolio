@@ -22,7 +22,6 @@ export default function Home() {
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          backgroundColor: 0x0,
           points: 20.00,
           maxDistance: 21.00,
           spacing: 12.00
@@ -35,6 +34,8 @@ export default function Home() {
   }, [vantaEffect]);
   
   return (
-    <div className='main' ref={vantaRef}>hello</div>
+    <div className='main' ref={vantaRef}>
+
+    </div>
   )
 }
