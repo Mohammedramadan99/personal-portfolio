@@ -40,8 +40,8 @@ export default function Page() {
   return (
     <div className='main' ref={vantaRef}>
       <div className="main-container h-screen bg-zinc-900/25 backdrop-blur-sm">
-        <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
-        {currentPage === 'home' ? <Home/> : currentPage === 'about' && <About/>}
+        <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        {currentPage === 'home' ? <Home/> : currentPage === 'about' && <About/> }
       </div>
     </div>
   )
