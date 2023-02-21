@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -9,7 +11,9 @@
 }
 body{
     color: #fff;
-    font-family: 'Mulish', sans-serif;
+    // font-family: 'Mulish', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: .2px;
 }
 .main {
     min-height: 100vh;
@@ -25,13 +29,13 @@ body{
         @apply rounded-3xl text-white font-medium transition-all;
     }
     .main-btn{
-        @apply bg-red-600 px-10 py-2
+        @apply bg-main_color px-10 py-2
     }
 }
 // animations 
 
 .animation-fadeUp{
-    animation: fadeUp linear .3s;
+    animation: fadeUp ease-in-out 1s;
 }
 .ani{
     animation: ani linear infinite 10s ;
@@ -67,8 +71,8 @@ body{
 }
 @keyframes fadeUp {
     0%{
-        opacity: 0;
-        transform: translateY(10%);
+        opacity: .6;
+        transform: translateY(3%);
     }
     100%{
         opacity: 1;

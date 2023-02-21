@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
     threeScript.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js')
     document.getElementsByTagName('head')[0].appendChild(threeScript)
     return () => {
-      if (threeScript) threeScript.remove();
+      if (threeScript) threeScript?.remove();
     }
   }, [])
   return (
