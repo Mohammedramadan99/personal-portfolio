@@ -3,6 +3,7 @@
     width: 100%;
     height: 100%;
     color: #000;
+    overflow: visible;
   }
   
   .swiper-slide {
@@ -23,3 +24,19 @@
     object-fit: cover;
   }
   
+.swiper-button-next,.swiper-button-prev{
+  top: unset;
+  left: unset;
+  bottom: -50px !important;
+  right:0 !important ;
+  &::after{
+    font-size: 18px !important;
+    color: #fff !important;
+    font-weight: bold;
+
+  }
+}
+
+.swiper-button-prev{
+  padding-right: 100px !important;
+}
