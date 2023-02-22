@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 *{
@@ -14,7 +14,34 @@ body{
     // font-family: 'Mulish', sans-serif;
     font-family: 'Quicksand', sans-serif;
     letter-spacing: .2px;
+    overflow: hidden;
 }
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    color: #000;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
 .main {
     min-height: 100vh;
 }
@@ -32,10 +59,17 @@ body{
         @apply bg-main_color px-10 py-2
     }
 }
+
+.items{
+    display: grid;   
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+
+
 // animations 
 
 .animation-fadeUp{
-    animation: fadeUp ease-in-out 1s;
+    animation: fadeUp ease-out .5s;
 }
 .ani{
     animation: ani linear infinite 10s ;
@@ -53,7 +87,7 @@ body{
     20%{
         // opacity: 0;
         opacity: 0;
-        transform: translateY(50%);
+        transform: translateY(0%);
     }
     30%{
         // opacity: 0;
@@ -71,7 +105,7 @@ body{
 }
 @keyframes fadeUp {
     0%{
-        opacity: .6;
+        opacity: 0;
         transform: translateY(3%);
     }
     100%{

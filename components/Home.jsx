@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button'
 import Name from './Name'
 
 function Home() {
@@ -6,7 +7,7 @@ function Home() {
     <div className='animation-fadeUp w-full h-4/5 flex-center'>
         <div className="flex flex-col items-center">
             <Name titleStyle="py-10"/>
-            <button className='btn main-btn capitalize'> hire me </button>
+            <Button content="hire me" />
         </div>
     </div>
   )

@@ -6,10 +6,11 @@ import * as THREE from 'three'
 import Navbar from "@/components/Navbar";
 import Home from "@/components/Home";
 import About from "@/components/About";
-
+import Portfolio from "@/components/Portfolio";
+import './swiper/swiper.scss'
 export default function Page() {
   const [vantaEffect, setVantaEffect] = useState(0);
-  const [currentPage,setCurrentPage] = useState('home')
+  const [currentPage,setCurrentPage] = useState('portfolio')
   const vantaRef = useRef(null);
   useEffect(() => {
     if (!vantaEffect) {
@@ -41,7 +42,9 @@ export default function Page() {
     <div className='main' ref={vantaRef}>
       <div className="main-container h-screen bg-zinc-900/25 backdrop-blur-sm">
         <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage}/>
-        {currentPage === 'home' ? <Home/> : currentPage === 'about' && <About/> }
+        {currentPage === 'home' ? <Home/> :
+         currentPage === 'about' ? <About/> :
+         currentPage === 'portfolio' && <Portfolio/>  }
       </div>
     </div>
   )
