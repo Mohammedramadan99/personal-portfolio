@@ -74,8 +74,8 @@ function Portfolio() {
   return (
     <div className='animation-fadeUp w-screen  h-4/5 flex-center '>
       <div className="flex flex-col w-screen md:w-[90%] lg:w-4/5 gap-x-4 h-96">
-        <h1 className='text-4xl font-extrabold capitalize'>creative <span className='text-main_color'>portfolio</span></h1>
-        <div className="my-5">
+        <h1 className='text-3xl font-extrabold capitalize'>creative <span className='text-main_color'>portfolio</span></h1>
+        <div className="mt-20">
         <Swiper 
                 // slidesPerView={3}
                 spaceBetween={30}
@@ -110,9 +110,9 @@ function Portfolio() {
                             alt="img" 
                           />
                         </div>
-                        <div className={`absolute bottom-0 left-5 w-o opacity-0  ${project.color} bg-white backdrop-blur-xl font-semibold p-5 text-sm rounded-lg capitalize  duration-300 ease-in group-hover:opacity-100 group-hover:bottom-5`}>
-                          <div className="">{project.category}</div>
-                          <div className="">{project.title}</div>
+                        <div className={`absolute bottom-0 left-5 w-o opacity-0   bg-white backdrop-blur-xl font-semibold p-5 text-sm rounded-lg capitalize  duration-300 ease-in group-hover:opacity-100 group-hover:bottom-5`}>
+                          <div className="text-slate-900">{project.category}</div>
+                          <div className={`${project.color}`}>{project.title}</div>
                         </div>
                       </div>
                     </SwiperSlide>

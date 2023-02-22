@@ -19,8 +19,8 @@ function Navbar({currentPage,setCurrentPage}) {
   return (
     <nav className='p-5 flex flex-col gap-y-5 md:flex-row  justify-around items-center backdrop-blur-lg '>
         {/* logo */}
-        <div className="font-semibold relative after:content-['Frontend_dev.'] after:absolute after:bottom-[-10px] after:left-0 after:text-xs after:text-main_color">
-            Mo<span className='opacity-[.3] text-slate-400'>hammed Ramadan</span>
+        <div className="font-semibold relative w-40 after:content-['Frontend_dev.'] after:absolute after:bottom-[-10px] after:left-0 after:text-xs after:text-main_color">
+            Mo
         </div>
 
         {/* links */}

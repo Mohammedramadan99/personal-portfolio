@@ -30,13 +30,13 @@
   bottom: -50px !important;
   right:0 !important ;
   &::after{
-    font-size: 18px !important;
+    font-size: 15px !important;
     color: #fff !important;
     font-weight: bold;
-
+    color: red !important;
   }
 }
 
 .swiper-button-prev{
-  padding-right: 100px !important;
+  padding-right: 50px !important;
 }
