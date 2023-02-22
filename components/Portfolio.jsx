@@ -24,10 +24,10 @@ function Portfolio() {
       img:ecommerce_img,
       description:"lorem",
       category:"full-stack project",
-      
       fromColor:"from-orange-300",
       toColor:"to-orange-400",
-      color:"text-orange-600"
+      color:"text-orange-600",
+      rotate:"img_container_rotate1"
     },
     {
       title:"social media",
@@ -36,7 +36,8 @@ function Portfolio() {
       category:"full-stack project",
       fromColor:"from-yellow-300",
       toColor:"to-yellow-400",
-      color:"text-yellow-600"
+      color:"text-yellow-600",
+      rotate:"img_container_rotate3"
     },
     {
       title:"blog",
@@ -45,7 +46,8 @@ function Portfolio() {
       category:"full-stack project",
       fromColor:"from-green-300",
       toColor:"to-green-400",
-      color:"text-green-600"
+      color:"text-green-600",
+      rotate:"img_container_rotate2"
     },
     {
       title:"moz portfolio 1",
@@ -54,7 +56,8 @@ function Portfolio() {
       category:"full-stack project",
       fromColor:"from-rose-300",
       toColor:"to-rose-400",
-      color:"text-rose-600"
+      color:"text-rose-600",
+      rotate:"img_container_rotate3"
     },
     {
       title:"moz portfolio 2",
@@ -63,7 +66,8 @@ function Portfolio() {
       category:"full-stack project",
       fromColor:"from-sky-300",
       toColor:"to-sky-400",
-      color:"text-sky-600"
+      color:"text-sky-600",
+      rotate:"img_container_rotate2"
     },
   ]
   const [hoverItem,setHoverItem] = useState(false)
@@ -80,7 +84,6 @@ function Portfolio() {
                 navigation={true} 
                 grabCursor={true}
                 modules={[Navigation]}
-                className=""
                 breakpoints={{
                     640:{
                       slidesPerView:2,
@@ -97,13 +100,13 @@ function Portfolio() {
                   }}          
             >
                 {projects?.map(project => (
-                    <SwiperSlide key={project._id} className="overflow-hidden rounded-xl ">
+                    <SwiperSlide key={project.title} className="overflow-hidden rounded-xl ">
                       <div className={`group relative w-full h-full backdrop-blur-2xl p-10 bg-gradient-to-l ${project.fromColor} ${project.toColor} transition-all`}>
                         {/* bg-gradient-to-l from-${project.color}-500 to-${project.color}-600 */}
-                        <div className={`w-full h-full m-auto  group-hover:scale-105  duration-700 ease-in-out rounded-3xl  shadow-2xl shadow-black/50`}>
+                        <div className={`img_container ${project.rotate} relative w-full h-full m-auto  group-hover:scale-105  duration-700 ease-in-out rounded-3xl  shadow-2xl shadow-black/50 before:text-white before:absolute before:z-10 before:rounded-xl before:flex before:justify-center before:items-center before:capitalize`}>
                           <Image 
-                            src={project.img} 
-                            className="w-full h-full rounded-3xl object-contain blur-sm group-hover:blur-0 transition-all" 
+                            src={project.img}
+                            className="w-full h-full rounded-xl object-contain group-hover:blur-0 transition-all" 
                             alt="img" 
                           />
                         </div>
