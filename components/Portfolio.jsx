@@ -115,8 +115,8 @@ function Portfolio() {
                             alt="img" 
                           />
                         </div>
-                        <div className={`absolute bottom-0 left-5 opacity-0 bg-white backdrop-blur-xl font-semibold p-5 text-sm rounded-lg capitalize duration-200 ease group-hover:opacity-100 group-hover:bottom-5`}>
-                          <div className="text-slate-900">{project.category}</div>
+                        <div className={`absolute bottom-0 left-5 opacity-0 ${project.bg} text-white  backdrop-blur-xl p-5 text-sm rounded-lg capitalize duration-200 ease group-hover:opacity-100 group-hover:bottom-5 font-bold`}>
+                          <div className="">{project.category}</div>
                           <div className={`${project.color}`}>{project.title}</div>
                         </div>
                       </div>
