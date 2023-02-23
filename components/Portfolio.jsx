@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation,  } from "swiper";
+import { Navigation  } from "swiper";
 
 
 import blog_img from '@/public/images/blog.png'
@@ -24,9 +24,10 @@ function Portfolio() {
       img:ecommerce_img,
       description:"lorem",
       category:"full-stack project",
-      fromColor:"from-orange-300",
-      toColor:"to-orange-400",
+      fromColor:"from-orange-400",
+      toColor:"to-orange-500",
       color:"text-orange-600",
+      bg:"bg-orange-600/10",
       rotate:"img_container_rotate1"
     },
     {
@@ -34,9 +35,10 @@ function Portfolio() {
       img:sm_img,
       description:"lorem",
       category:"full-stack project",
-      fromColor:"from-yellow-300",
-      toColor:"to-yellow-400",
+      fromColor:"from-yellow-400",
+      toColor:"to-yellow-500",
       color:"text-yellow-600",
+      bg:"bg-yellow-600/10",
       rotate:"img_container_rotate3"
     },
     {
@@ -44,9 +46,10 @@ function Portfolio() {
       img:blog_img,
       description:"lorem",
       category:"full-stack project",
-      fromColor:"from-green-300",
-      toColor:"to-green-400",
+      fromColor:"from-green-400",
+      toColor:"to-green-500",
       color:"text-green-600",
+      bg:"bg-green-600/10",
       rotate:"img_container_rotate2"
     },
     {
@@ -54,9 +57,10 @@ function Portfolio() {
       img:portfolio_img,
       description:"lorem",
       category:"full-stack project",
-      fromColor:"from-rose-300",
-      toColor:"to-rose-400",
+      fromColor:"from-rose-400",
+      toColor:"to-rose-500",
       color:"text-rose-600",
+      bg:"bg-rose-600/10",
       rotate:"img_container_rotate3"
     },
     {
@@ -64,9 +68,10 @@ function Portfolio() {
       img:portfolio_img,
       description:"lorem",
       category:"full-stack project",
-      fromColor:"from-sky-300",
-      toColor:"to-sky-400",
+      fromColor:"from-sky-400",
+      toColor:"to-sky-500",
       color:"text-sky-600",
+      bg:"bg-sky-600/10",
       rotate:"img_container_rotate2"
     },
   ]
@@ -100,17 +105,17 @@ function Portfolio() {
                   }}          
             >
                 {projects?.map(project => (
-                    <SwiperSlide key={project.title} className="overflow-hidden rounded-xl ">
-                      <div className={`group relative w-full h-full backdrop-blur-2xl p-10 bg-gradient-to-l ${project.fromColor} ${project.toColor} transition-all`}>
+                    <SwiperSlide key={project.title} className="overflow-hidden rounded-xl bg-transparent">
+                      <div className={`group relative w-full h-full p-10 ${project.bg} backdrop-blur-lg `}>
                         {/* bg-gradient-to-l from-${project.color}-500 to-${project.color}-600 */}
-                        <div className={`img_container ${project.rotate} relative w-full h-full m-auto  group-hover:scale-105  duration-700 ease-in-out rounded-3xl  shadow-2xl shadow-black/50 before:text-white before:absolute before:z-10 before:rounded-xl before:flex before:justify-center before:items-center before:capitalize`}>
+                        <div className={`img_container ${project.rotate} relative w-full h-full m-auto duration-700 ease-in-out rounded-3xl  shadow-2xl shadow-black/50 before:absolute before:z-10 before:rounded-xl before:blur-xl`}>
                           <Image 
                             src={project.img}
                             className="w-full h-full rounded-xl object-contain group-hover:blur-0 transition-all" 
                             alt="img" 
                           />
                         </div>
-                        <div className={`absolute bottom-0 left-5 w-o opacity-0   bg-white backdrop-blur-xl font-semibold p-5 text-sm rounded-lg capitalize  duration-300 ease-in group-hover:opacity-100 group-hover:bottom-5`}>
+                        <div className={`absolute bottom-0 left-5 opacity-0 bg-white backdrop-blur-xl font-semibold p-5 text-sm rounded-lg capitalize duration-200 ease group-hover:opacity-100 group-hover:bottom-5`}>
                           <div className="text-slate-900">{project.category}</div>
                           <div className={`${project.color}`}>{project.title}</div>
                         </div>
