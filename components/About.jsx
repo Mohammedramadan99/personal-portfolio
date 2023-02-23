@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import myImage from '../public/images/me_1.png'
-import AboutModal from './AboutModal'
+import AboutModal from './Modal/AboutModal'
 import Button from './Button'
 
 import Name from './Name'
