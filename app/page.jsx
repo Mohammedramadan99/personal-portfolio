@@ -44,7 +44,7 @@ export default function Page() {
         <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         {currentPage === 'home' ? <Home/> :
          currentPage === 'about' ? <About/> :
-         currentPage === 'portfolio' && <Portfolio/>  }
+         currentPage === 'portfolio' && <Portfolio/>}
       </div>
     </div>
   )

@@ -68,11 +68,6 @@ body{
     }
 }
 
-.items{
-    display: grid;   
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-}
-
 
 // animations 
 
@@ -82,6 +77,10 @@ body{
 .ani{
     animation: ani linear infinite 10s ;
     animation-delay: 1s;
+}
+
+.open{
+    animation: open 1s linear;
 }
 @keyframes ani {
     0%{
@@ -126,10 +125,23 @@ body{
         
         opacity: 1;
     }
-    
     100%{
         opacity: 0;
         width: 110%;
         height: 150%;
+    }
+}
+@keyframes open {
+    0%{
+        opacity: 0;
+        transform: translate(-100px,100px);
+    }
+    50%{
+        opacity: .7;
+        transform: translate(40px,40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
     }
 }
