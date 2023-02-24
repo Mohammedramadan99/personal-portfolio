@@ -4,6 +4,10 @@
 // @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+
+// Vars 
+$main_color:#eb4a4c;
+
 *{
     margin: 0;
     padding: 0;
@@ -19,10 +23,6 @@ body{
 
 .main {
     min-height: 100vh;
-}
-.group{
-    // background-color: rgba(#fff, .3);
-    backdrop-filter: blur(20px);
 }
 .img_container{
     overflow: hidden;
@@ -57,6 +57,26 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.close-icon{
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+
+    &::before{
+        content: "X";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: all .3s ease-in-out;
+    }
+
+    &:hover{
+        &::before{
+            animation: toTop .5s ease-in-out;
+            color: #eb4a4c
+        }
+    }
 }
 
 @layer base {
@@ -145,3 +165,23 @@ body{
         transform: translateX(0);
     }
 }
+@keyframes toTop {
+    0%{
+        opacity: 1;
+        top: 50%;
+    }
+    30%{
+        opacity: .2;
+        top: -100%;
+    }
+    70%{
+        opacity: .1;
+        top: 200%;
+    }
+    100%{
+        opacity: 1;
+        top: 50%;
+
+    }
+}
+
