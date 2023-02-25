@@ -12,13 +12,13 @@ function AboutModal({openModal,setOpenModal}) {
         <div className="relative w-full mb-10">
             <div className="flex justify-between items-center w-full">
                 {/* image */}
-                <div className="flex justify-between items-center w-full gap-x-5 mb-10 sticky">
+                <div className="flex flex-col lg:flex-row justify-between items-center w-full gap-x-5 mb-10 sticky">
                   <div className="relative flex-center w-14 h-14  rounded-2xl overflow-hidden">
                     <Image src={myImage} className=" w-14 h-14 object-cover mix-blend-lighten rounded-full" alt="img" />
                   </div>
                   {/* text */}
                   <div className="flex-1">
-                    <Name nameSize="text-2xl" nameStyle="pb-2" titleSize="lg" />
+                    <Name nameSize="lg:text-2xl" nameStyle="pb-2" titleSize="lg" />
                   </div>
                 </div>
                 {/* close */}

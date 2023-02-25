@@ -18,7 +18,7 @@ body{
     // font-family: 'Mulish', sans-serif;
     font-family: 'Quicksand', sans-serif;
     letter-spacing: .2px;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .main {
@@ -74,7 +74,7 @@ body{
     &:hover{
         &::before{
             animation: toTop .5s ease-in-out;
-            color: #eb4a4c
+            color: #eb4a4c;
         }
     }
 }

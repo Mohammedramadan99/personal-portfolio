@@ -30,8 +30,8 @@ function Navbar({currentPage,setCurrentPage}) {
                     key={l.title} 
                     href='#'
                     className={l.title === currentPage ?
-                        `cursor-pointer text-main_color capitalize hover:text-main_color transition-all ` :
-                        `cursor-pointer capitalize hover:text-main_color transition-all`}
+                        `cursor-pointer text-main_color capitalize hover:text-main_color transition-all text-xs md:text-lg` :
+                        `cursor-pointer capitalize hover:text-main_color transition-all text-xs md:text-lg`}
                     onClick={() => setCurrentPage(l.title)} >
                     {l.title}
                 </Link>
