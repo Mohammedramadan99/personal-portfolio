@@ -20,6 +20,10 @@ body{
     letter-spacing: .2px;
     overflow-x: hidden;
 }
+input,textarea{
+    outline: none;
+}
+
 
 .main {
     min-height: 100vh;
