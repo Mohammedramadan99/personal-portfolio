@@ -8,6 +8,7 @@ import Home from "@/components/Home";
 import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import './swiper/swiper.scss'
+import Contact from "@/components/Contact";
 export default function Page() {
   const [vantaEffect, setVantaEffect] = useState(0);
   const [currentPage,setCurrentPage] = useState('portfolio')
@@ -42,9 +43,13 @@ export default function Page() {
     <div className='main' ref={vantaRef}>
       <div className="main-container h-screen bg-zinc-900/25 backdrop-blur-sm selection:bg-main_color selection:text-white">
         <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage}/>
-        {currentPage === 'home' ? <Home/> :
-         currentPage === 'about' ? <About/> :
-         currentPage === 'portfolio' && <Portfolio/>}
+        {/* {
+          currentPage === 'home' ? <Home/> :
+          currentPage === 'about' ? <About/> :
+          currentPage === 'portfolio' ? <Portfolio/> : 
+          currentPage === 'contact' && <Contact/>
+        } */}
+        <Contact/>
       </div>
     </div>
   )
