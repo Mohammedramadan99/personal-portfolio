@@ -43,13 +43,12 @@ export default function Page() {
     <div className='main' ref={vantaRef}>
       <div className="main-container h-screen bg-zinc-900/25 backdrop-blur-sm selection:bg-main_color selection:text-white">
         <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage}/>
-        {/* {
+        {
           currentPage === 'home' ? <Home/> :
           currentPage === 'about' ? <About/> :
           currentPage === 'portfolio' ? <Portfolio/> : 
-          currentPage === 'contact' && <Contact/>
-        } */}
-        <Contact/>
+          currentPage === 'contact' && <Contact currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        }
       </div>
     </div>
   )

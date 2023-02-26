@@ -1,13 +1,13 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import Name from '../Name'
 import myImage from '../../public/images/me_1.png'
 import Skills from './Skills'
 import Certifications from './Certifications'
 function AboutModal({openModal,setOpenModal}) {
-  
+  const [name,setName] = useState('mohammed')  
   return (
-    <div className={`absolute ${openModal ? "open" : "close"} bg-black/80 text-white backdrop-blur-sm w-[90%] h-[90%] overflow-x-hidden overflow-y-auto p-10`}>
+    <div className={`absolute ${openModal ? "open" : "close"} bg-black/80 text-white backdrop-blur-sm w-[90%] h-[80%] overflow-x-hidden overflow-y-auto p-10`}>
         {/* top */}
         <div className="relative w-full mb-10">
             <div className="flex justify-between items-center w-full">

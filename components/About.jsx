@@ -11,7 +11,7 @@ function About() {
     <div className="animation-fadeUp h-full flex xs:items-start justify-center md:items-center">
       <div className="flex flex-wrap md:w-4/5 gap-x-4">
         {/* image */}
-        <div className="w-full h-[500px] lg:flex-1 relative bg-neutral-900 flex-center rounded-2xl overflow-hidden">
+        <div className="w-full h-[400px] lg:flex-1 relative bg-neutral-900 flex-center rounded-2xl overflow-hidden">
           <Image src={myImage} className="absolute -bottom-10 w-full h-full object-contain mix-blend-lighten" alt="img" />
         </div>
         {/* text */}

@@ -24,14 +24,14 @@ function Navbar({currentPage,setCurrentPage}) {
         </div>
 
         {/* links */}
-        <div className="flex gap-x-5 font-semibold flex-wrap ">
+        <div className="flex gap-x-5 font-medium flex-wrap ">
             {links.map(l => (
                 <Link
                     key={l.title} 
                     href='#'
                     className={l.title === currentPage ?
-                        `cursor-pointer text-main_color capitalize hover:text-main_color transition-all text-xs md:text-lg` :
-                        `cursor-pointer capitalize hover:text-main_color transition-all text-xs md:text-lg`}
+                        `cursor-pointer text-main_color capitalize hover:text-main_color transition-all text-xs md:text-base` :
+                        `cursor-pointer capitalize hover:text-main_color transition-all text-xs md:text-base`}
                     onClick={() => setCurrentPage(l.title)} >
                     {l.title}
                 </Link>
