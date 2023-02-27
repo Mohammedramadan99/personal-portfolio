@@ -1,7 +1,10 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
-
+import React, { useContext, useState } from 'react'
+import {motion} from 'framer-motion'
+import { CursorContext } from '@/context/CursorContext'
+import { transition1 } from '@/utils/transitions'
 function Navbar({currentPage,setCurrentPage}) {
+    const {mouseEnterHandler,mouseLeaveHandler} = useContext(CursorContext)
     const [links,setLinks] = useState([
         {
             title:"home",
@@ -26,15 +29,20 @@ function Navbar({currentPage,setCurrentPage}) {
         {/* links */}
         <div className="flex gap-x-5 font-medium flex-wrap ">
             {links.map(l => (
-                <Link
+                <motion.div
                     key={l.title} 
-                    href='#'
+                    initial={{opacity:0, y:"-50%"}}
+                    animate={{opacity:1, y:0}}
+                    exit={{opacity:0, y: "-50%"}}
+                    transition={transition1}
+                    onMouseEnter={mouseEnterHandler}
+                    onMouseLeave={mouseLeaveHandler}
                     className={l.title === currentPage ?
                         `cursor-pointer text-main_color capitalize hover:text-main_color transition-all text-xs md:text-base` :
                         `cursor-pointer capitalize hover:text-main_color transition-all text-xs md:text-base`}
                     onClick={() => setCurrentPage(l.title)} >
                     {l.title}
-                </Link>
+                </motion.div>
             ))}
         </div>
     </nav>

@@ -10,7 +10,6 @@ import Name from './Name'
 import { CursorContext } from '@/context/CursorContext';
 import { transition1 } from '@/utils/transitions';
 function About() {
-  const {mouseEnterHandler,mouseLeaveHandler} = useContext(CursorContext)
   const [openModal,setOpenModal] = useState(false)
   return (
     <div className="animation-fadeUp h-full flex xs:items-start justify-center md:items-center">

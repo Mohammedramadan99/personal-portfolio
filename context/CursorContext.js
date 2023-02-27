@@ -10,21 +10,28 @@ const CursorProvider = ({children}) => {
 
     // cursor bg state
     const [cursorBG,setCursorBG] = useState('default');
-    useEffect(() => {
-        const move = e => {
-            setCursorPos({
-                x: e.clientX,
-                y: e.clientY
-            });
-        }
-        window.addEventListener('mousemove',move )
 
-        //   to remove event
-        return () => {
-            window.removeEventListener('mousemove', move)
+    const mobileViewportIsActive = window.innerWidth < 768;
+
+    useEffect(() => {
+        if (!mobileViewportIsActive) {
+            const move = e => {
+                setCursorPos({
+                    x: e.clientX,
+                    y: e.clientY
+                });
+            }
+            window.addEventListener('mousemove',move )
+    
+            //   to remove event
+            return () => {
+                window.removeEventListener('mousemove', move)
+            }
+            
+        } else {
+            setCursorBG('none')
         }
     })
-    console.log(cursorPos)
     
     const cursorVariants = {
         default: {
