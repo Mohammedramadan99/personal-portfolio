@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import NET from 'vanta/dist/vanta.net.min'
 import * as THREE from 'three'
 import Navbar from "@/components/Navbar";
@@ -9,6 +9,8 @@ import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import './swiper/swiper.scss'
 import Contact from "@/components/Contact";
+import {CursorContext} from "@/context/CursorContext";
+import {motion} from 'framer-motion'
 export default function Page() {
   const [vantaEffect, setVantaEffect] = useState(0);
   const [currentPage,setCurrentPage] = useState('portfolio')
@@ -38,7 +40,7 @@ export default function Page() {
       if (vantaEffect) vantaEffect.destory();
     };
   }, [vantaEffect]);
-  
+  const {cursorVariants} = useContext(CursorContext)
   return (
     <div className='main' ref={vantaRef}>
       <div className="main-container h-screen bg-zinc-900/25 backdrop-blur-sm selection:bg-main_color selection:text-white">
@@ -50,6 +52,14 @@ export default function Page() {
           currentPage === 'contact' && <Contact currentPage={currentPage} setCurrentPage={setCurrentPage} />
         }
       </div>
+      {/* cursor */}
+      <motion.div
+        variants={cursorVariants}
+        animate={'default'}
+        className="w-[32px] h-[32px] border border-main_color fixed top-0 left-0 pointer-events-none z-50 rounded-full flex-center"
+        >
+          <div className="w-1 h-1 bg-main_color rounded-full"></div>
+        </motion.div>
     </div>
   )
 }

@@ -1,7 +1,8 @@
 'use client'
 import { useEffect } from 'react'
 import './globals.scss'
-
+// import cursor context provider 
+import CursorProvider from '@/context/CursorContext'
 export default function RootLayout({ children }) {
   useEffect(() => {
     const threeScript = document.createElement('script')
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head />
       <body>
-        {children}
+        <CursorProvider>
+          {children}
+        </CursorProvider>
       </body>
     </html>
   )
