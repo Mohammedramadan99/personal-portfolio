@@ -75,7 +75,7 @@ function Contact({currentPage,setCurrentPage}) {
         setSuccess(false)
         setCurrentPage('home')
       }
-    }, [success])
+    }, [success,setCurrentPage])
     
     
   return (
