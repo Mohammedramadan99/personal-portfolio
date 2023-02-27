@@ -1,3 +1,4 @@
+// 1:14:00 m
 'use client';
 
 import { useContext, useEffect, useRef, useState } from "react"
@@ -11,9 +12,11 @@ import './swiper/swiper.scss'
 import Contact from "@/components/Contact";
 import {CursorContext} from "@/context/CursorContext";
 import {motion} from 'framer-motion'
+import { transition1 } from "@/utils/transitions";
 export default function Page() {
   const [vantaEffect, setVantaEffect] = useState(0);
-  const [currentPage,setCurrentPage] = useState('portfolio')
+  const [currentPage,setCurrentPage] = useState('home')
+  
   const vantaRef = useRef(null);
   useEffect(() => {
     if (!vantaEffect) {
@@ -40,7 +43,7 @@ export default function Page() {
       if (vantaEffect) vantaEffect.destory();
     };
   }, [vantaEffect]);
-  const {cursorVariants} = useContext(CursorContext)
+  const {cursorVariants,cursorBG} = useContext(CursorContext)
   return (
     <div className='main' ref={vantaRef}>
       <div className="main-container h-screen bg-zinc-900/25 backdrop-blur-sm selection:bg-main_color selection:text-white">
@@ -55,7 +58,7 @@ export default function Page() {
       {/* cursor */}
       <motion.div
         variants={cursorVariants}
-        animate={'default'}
+        animate={cursorBG}
         className="w-[32px] h-[32px] border border-main_color fixed top-0 left-0 pointer-events-none z-50 rounded-full flex-center"
         >
           <div className="w-1 h-1 bg-main_color rounded-full"></div>

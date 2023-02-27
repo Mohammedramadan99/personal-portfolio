@@ -1,8 +1,11 @@
-'use client'
+'use client';
 import { useEffect } from 'react'
 import './globals.scss'
 // import cursor context provider 
 import CursorProvider from '@/context/CursorContext'
+import { AnimatePresence } from 'framer-motion'
+import Providers from './providers';
+
 export default function RootLayout({ children }) {
   useEffect(() => {
     const threeScript = document.createElement('script')
@@ -17,9 +20,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head />
       <body>
-        <CursorProvider>
+        <Providers>
           {children}
-        </CursorProvider>
+        </Providers>
       </body>
     </html>
   )
