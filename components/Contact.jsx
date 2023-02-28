@@ -83,7 +83,7 @@ function Contact({currentPage,setCurrentPage}) {
         {/* Box */}
         <div className="flex flex-col gap-y-3">
             {/* Top */}
-            <div className="flex flex-wrap gap-10 bg-slate-900/20 backdrop-blur-xl p-6">
+            <div className="flex flex-wrap gap-10 bg-zinc-900/50 backdrop-blur-xl p-6">
                 {contactData.map(item => {
                     if (item.link) {
                         return(
@@ -107,16 +107,16 @@ function Contact({currentPage,setCurrentPage}) {
                 {alert !== "" && <div className='absolute top-20 left-20 px-6 py-4 capitalize bg-main_color/50 text-slate-200 rounded-3xl'> {alert} </div>}
                 <form className='flex flex-wrap items-center gap-5' onSubmit={submitHandler}>
                     <div className='flex flex-col gap-y-5'>
-                        <input type="text" value={formData.name} name='name' className='p-3 text-slate-200 bg-slate-900/20 focus:bg-slate-900/50 transition-all focus:scale-x-105 backdrop-blur-xl rounded-xl md:w-72 w-full placeholder:text-slate-400 ' placeholder='name' onChange={onChangeHandler} />
-                        <input type="text" value={formData.email} name='email' className='p-3 text-slate-200 bg-slate-900/20 focus:bg-slate-900/50 transition-all focus:scale-x-105 backdrop-blur-xl rounded-xl md:w-72 w-full placeholder:text-slate-400 ' placeholder='email' onChange={onChangeHandler} />
+                        <input type="text" value={formData.name} name='name' className='p-3 text-slate-200 bg-zinc-900/50 focus:bg-zinc-900/70 transition-all focus:scale-x-105 backdrop-blur-xl rounded-xl md:w-72 w-full placeholder:text-slate-400 ' placeholder='name' onChange={onChangeHandler} />
+                        <input type="text" value={formData.email} name='email' className='p-3 text-slate-200 bg-zinc-900/50 focus:bg-zinc-900/70 transition-all focus:scale-x-105 backdrop-blur-xl rounded-xl md:w-72 w-full placeholder:text-slate-400 ' placeholder='email' onChange={onChangeHandler} />
                     </div>
                     <div>
-                        <textarea name='message' value={formData.message} className='h-full p-3 text-slate-200 bg-slate-900/20 focus:bg-slate-900/50 transition-all focus:scale-x-105 backdrop-blur-xl rounded-xl placeholder:text-slate-400  max-h-24 md:w-72 w-full' placeholder='message' onChange={onChangeHandler}/>
+                        <textarea name='message' value={formData.message} className='h-full p-3 text-slate-200 bg-zinc-900/50 focus:bg-zinc-900/70 transition-all focus:scale-x-105 backdrop-blur-xl rounded-xl placeholder:text-slate-400  max-h-24 md:w-72 w-full' placeholder='message' onChange={onChangeHandler}/>
                     </div>
                     {success ? (
                         <div className='px-10 bg-green-500 text-green-900 rounded-lg capitalize'>Thanks</div>
                     ) : (
-                        <input type="submit" value="send" className='px-10 bg-main_color/50 rounded-lg capitalize'/>
+                        <input type="submit" value="send message" className=' cursor-pointer px-10 py-3 bg-main_color/50  capitalize border-2 border-transparent hover:bg-transparent    hover:border-main_color transition-all font-semibold rounded-3xl'/>
                     )}
                 </form>
             </div>

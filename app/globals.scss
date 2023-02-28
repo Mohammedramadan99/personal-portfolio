@@ -27,7 +27,7 @@ input,textarea{
 
 .main {
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
 
 }
 .img_container{
@@ -94,7 +94,13 @@ input,textarea{
     }
 }
 
-
+.vanta-canvas{
+    height: 1100px !important;
+}
+.main-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 // animations 
 
 .animation-fadeUp{

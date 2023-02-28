@@ -12,15 +12,15 @@ import { transition1 } from '@/utils/transitions';
 function About() {
   const [openModal,setOpenModal] = useState(false)
   return (
-    <div className="animation-fadeUp h-full flex xs:items-start justify-center md:items-center">
-      <div className="flex flex-wrap md:w-4/5 gap-x-4">
+    <div className="animation-fadeUp border h-5/6 flex xs:items-start justify-center md:items-center">
+      <div className="flex-center flex-wrap w-full h-full  md:w-4/5 gap-x-4">
         {/* image */}
         <motion.div
           initial={{opacity:0, y:"100%"}}
           animate={{opacity:1, y:0}}
           exit={{opacity:0, y: "100%"}}
           transition={transition1}
-          className="w-full h-[400px] lg:flex-1 relative bg-neutral-900 flex-center rounded-2xl overflow-hidden"
+          className="w-full max-w-[500px] sm:w-full md:w-1/2 lg:w-full h-full max-h-[400px] lg:flex-1 relative bg-neutral-900 flex-center rounded-2xl overflow-hidden"
           >
           <Image src={myImage} className="absolute -bottom-10 w-full h-full object-contain mix-blend-lighten" alt="img" />
         </motion.div>
