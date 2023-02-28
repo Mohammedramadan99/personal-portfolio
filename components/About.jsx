@@ -16,9 +16,9 @@ function About() {
       <div className="flex-center flex-wrap w-full h-full  md:w-4/5 gap-x-4">
         {/* image */}
         <motion.div
-          initial={{opacity:0, y:"100%"}}
+          initial={{opacity:0, y:"50%"}}
           animate={{opacity:1, y:0}}
-          exit={{opacity:0, y: "100%"}}
+          exit={{opacity:0, y: "50%"}}
           transition={transition1}
           className="w-full max-w-[500px] sm:w-full md:w-1/2 lg:w-full h-full max-h-[400px] lg:flex-1 relative bg-neutral-900 flex-center rounded-2xl overflow-hidden"
           >

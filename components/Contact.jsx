@@ -3,7 +3,8 @@ import {FaLocationArrow,FaPhone,FaLinkedin, FaGithub} from 'react-icons/fa'
 import {AiFillMail} from 'react-icons/ai'
 import Link from 'next/link'
 import axios from 'axios'
-
+import { transition1 } from '@/utils/transitions'
+import {motion} from 'framer-motion'
 const origin =
   typeof window !== "undefined" && window.location.origin
     ? window.location.origin
@@ -83,7 +84,12 @@ function Contact({currentPage,setCurrentPage}) {
         {/* Box */}
         <div className="flex flex-col gap-y-3">
             {/* Top */}
-            <div className="flex flex-wrap gap-10 bg-zinc-900/50 backdrop-blur-xl p-6">
+            <motion.div
+                initial={{opacity:0, x:"50%",scale:0}}
+                animate={{opacity:1, x:0,scale:1}}
+                exit={{opacity:0, x: "50%",scale:0}}
+                transition={transition1}
+            className="flex flex-wrap gap-10 bg-zinc-900/50 backdrop-blur-xl p-6">
                 {contactData.map(item => {
                     if (item.link) {
                         return(
@@ -101,9 +107,14 @@ function Contact({currentPage,setCurrentPage}) {
                         )
                     }
                 })}
-            </div>
+            </motion.div>
             {/* Bottom */}
-            <div className="mt-5">
+            <motion.div
+                initial={{opacity:0, x:"-50%",scale:0}}
+                animate={{opacity:1, x:0,scale:1}}
+                exit={{opacity:0, x: "-50%",scale:0}}
+                transition={transition1}
+                className="mt-5">
                 {alert !== "" && <div className='absolute top-20 left-20 px-6 py-4 capitalize bg-main_color/50 text-slate-200 rounded-3xl'> {alert} </div>}
                 <form className='flex flex-wrap items-center gap-5' onSubmit={submitHandler}>
                     <div className='flex flex-col gap-y-5'>
@@ -119,7 +130,7 @@ function Contact({currentPage,setCurrentPage}) {
                         <input type="submit" value="send message" className=' cursor-pointer px-10 py-3 bg-main_color/50  capitalize border-2 border-transparent hover:bg-transparent    hover:border-main_color transition-all font-semibold rounded-3xl'/>
                     )}
                 </form>
-            </div>
+            </motion.div>
         </div>
     </div>
   )

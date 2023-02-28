@@ -111,9 +111,9 @@ function Portfolio() {
                 {projects?.map(project => (
                     <SwiperSlide key={project.title} className="overflow-hidden rounded-xl bg-transparent">
                       <motion.div 
-                      initial={{opacity:0, y:"-50%",scale:.5}}
-                      animate={{opacity:1, y:0,scale:1}}
-                      exit={{opacity:0, y: "-50%",scale:.1}}
+                      initial={{opacity:0,scale:0}}
+                      animate={{opacity:1,scale:1}}
+                      exit={{opacity:0,scale:.1}}
                       transition={transition1}
                       onMouseEnter={mouseEnterHandler}
                       onMouseLeave={mouseLeaveHandler}

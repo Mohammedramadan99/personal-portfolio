@@ -1,9 +1,16 @@
-import React from 'react'
+'use client';
 
+import { transition1 } from '@/utils/transitions';
+import {motion} from 'framer-motion'
 function Certifications() {
-    const certifications = ["React Basics","React Advanced"]
+  const certifications = ["React Basics","React Advanced"]
   return (
-    <div>
+    <motion.div 
+        initial={{opacity:0, x:"50%",scale:0}}
+        animate={{opacity:1, x:0,scale:1}}
+        exit={{opacity:0, x: "50%",scale:0}}
+        transition={transition1}
+    >
         {/* section title */}
         <h1 className="text-lg font-bold uppercase border-b border-gray-600 w-fit pb-2 pt-5">certifi<span className='text-main_color'>cat</span>ions</h1>
         {/* certifications */}
@@ -17,7 +24,7 @@ function Certifications() {
                 </div>)}
             </div>
         </div>
-    </div> 
+    </motion.div> 
   )
 }
 

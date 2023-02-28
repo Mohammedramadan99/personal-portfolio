@@ -11,6 +11,8 @@ import Portfolio from "@/components/Portfolio";
 import './swiper/swiper.scss'
 import Contact from "@/components/Contact";
 import {CursorContext} from "@/context/CursorContext";
+import { AnimatePresence } from 'framer-motion'
+
 import {motion} from 'framer-motion'
 export default function Page() {
   const [vantaEffect, setVantaEffect] = useState(0);
@@ -21,7 +23,7 @@ export default function Page() {
     if (!vantaEffect) {
       setVantaEffect(
         NET({
-          el: vantaRef.current,
+          el: vantaRef?.current,
           THREE,
           color: 0xff3f81,          
           backgroundColor: 0x0,
@@ -39,20 +41,22 @@ export default function Page() {
       );
     }
     return () => {
-      if (vantaEffect) vantaEffect.destory();
+      if (vantaEffect) vantaEffect?.destory();
     };
-  }, [vantaEffect]);
+  }, [vantaEffect,vantaRef]);
   const {cursorVariants,cursorBG} = useContext(CursorContext)
   return (
     <div className='main' ref={vantaRef}>
       <div className="main-container h-screen bg-zinc-900/25 backdrop-blur-sm selection:bg-main_color selection:text-white">
         <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage}/>
-        {
-          currentPage === 'home' ? <Home/> :
-          currentPage === 'about' ? <About/> :
-          currentPage === 'portfolio' ? <Portfolio/> : 
-          currentPage === 'contact' && <Contact currentPage={currentPage} setCurrentPage={setCurrentPage} />
-        }
+        <AnimatePresence initial={true} mode="wait">
+          {
+            currentPage === 'home' ? <Home/> :
+            currentPage === 'about' ? <About/> :
+            currentPage === 'portfolio' ? <Portfolio/> : 
+            currentPage === 'contact' && <Contact currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          }
+        </AnimatePresence>
       </div>
       {/* cursor */}
       <motion.div

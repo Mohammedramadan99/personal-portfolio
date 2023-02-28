@@ -22,6 +22,7 @@ const CursorProvider = ({children}) => {
                 });
             }
             window.addEventListener('mousemove',move )
+            // on drag
             window.addEventListener('mouseover',move )
             window.addEventListener('mouseout',move )
     

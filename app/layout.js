@@ -2,8 +2,6 @@
 import { useEffect } from 'react'
 import './globals.scss'
 // import cursor context provider 
-import CursorProvider from '@/context/CursorContext'
-import { AnimatePresence } from 'framer-motion'
 import Providers from './providers';
 
 export default function RootLayout({ children }) {

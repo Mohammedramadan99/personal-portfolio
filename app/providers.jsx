@@ -4,11 +4,11 @@ import CursorProvider from '@/context/CursorContext';
 function Providers({children,...rest}) {
 
     return (
-        <AnimatePresence initial={true} mode="wait">
+        // <AnimatePresence initial={true} mode="wait">
             <CursorProvider>
                 {children}
             </CursorProvider>
-        </AnimatePresence>
+        // {/* </AnimatePresence> */}
         
     )   
 }
