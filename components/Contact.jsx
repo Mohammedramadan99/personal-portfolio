@@ -80,7 +80,13 @@ function Contact({currentPage,setCurrentPage}) {
     
     
   return (
-    <div className='animation-fadeUp w-full h-[90vh] flex-center p-5'>
+    <div className='relative animation-fadeUp w-full h-[90vh] flex-center p-5'>
+        {alert !== "" && <motion.div
+                initial={{opacity:0,scale:0}}
+                animate={{opacity:1,scale:1}}
+                exit={{opacity:0,scale:0}}
+                transition={transition1}
+                className='absolute top-20 left-20 px-6 py-4 capitalize bg-main_color/50 text-slate-200 rounded-3xl'> {alert} </motion.div>}
         {/* Box */}
         <div className="flex flex-col gap-y-3">
             {/* Top */}
@@ -115,7 +121,6 @@ function Contact({currentPage,setCurrentPage}) {
                 exit={{opacity:0, x: "-50%",scale:0}}
                 transition={transition1}
                 className="mt-5">
-                {alert !== "" && <div className='absolute top-20 left-20 px-6 py-4 capitalize bg-main_color/50 text-slate-200 rounded-3xl'> {alert} </div>}
                 <form className='flex flex-wrap items-center gap-5' onSubmit={submitHandler}>
                     <div className='flex flex-col gap-y-5'>
                         <input type="text" value={formData.name} name='name' className='p-3 text-slate-200 bg-zinc-900/50 focus:bg-zinc-900/70 transition-all focus:scale-x-105 backdrop-blur-xl rounded-xl md:w-72 w-full placeholder:text-slate-400 ' placeholder='name' onChange={onChangeHandler} />
