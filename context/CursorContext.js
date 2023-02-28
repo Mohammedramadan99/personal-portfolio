@@ -1,3 +1,4 @@
+'use client';
 import {useState,useEffect,createContext, Children} from 'react'
 
 export const CursorContext = createContext();
