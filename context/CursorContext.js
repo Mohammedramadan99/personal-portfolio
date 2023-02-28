@@ -14,24 +14,28 @@ const CursorProvider = ({children}) => {
     const mobileViewportIsActive = window.innerWidth < 768;
 
     useEffect(() => {
-        const move = e => {
-            setCursorPos({
-                x: e.clientX,
-                y: e.clientY
-            });
-        }
-        window.addEventListener('mousemove',move )
-
-        //   to remove event
-        return () => {
-            window.removeEventListener('mousemove', move)
-        }
-        // if (!mobileViewportIsActive) {
+        if (!mobileViewportIsActive) {
+            const move = e => {
+                setCursorPos({
+                    x: e.clientX,
+                    y: e.clientY
+                });
+            }
+            window.addEventListener('mousemove',move )
+            window.addEventListener('mouseover',move )
+            window.addEventListener('mouseout',move )
+    
+            //   to remove event
+            return () => {
+                window.removeEventListener('mousemove', move)
+                window.removeEventListener('mouseover', move)
+                window.removeEventListener('mouseout', move)
+            }
             
-        // } else {
-        //     setCursorBG('none')
-        // }
-    })
+        } else {
+            setCursorBG('none')
+        }
+    },[mobileViewportIsActive,cursorBG])
     
     const cursorVariants = {
         default: {
@@ -45,7 +49,15 @@ const CursorProvider = ({children}) => {
             y: cursorPos.y - 72,
             backgroundColor: '#fff',
             mixBlendMode:'difference'
+        },
+        none:{
+            width:0,
+            height:0,
+            backgroundColor: "rgba(255,255,255,1)",
+            opacity:0,
+            display:"none"
         }
+
     }
 
     // mouse enter handler

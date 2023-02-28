@@ -14,10 +14,14 @@ import ecommerce_img from '@/public/images/Ecommerce.png'
 import portfolio_img from '@/public/images/portfolio.png'
 import sm_img from '@/public/images/social_media.png'
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import {motion} from 'framer-motion' 
+import { CursorContext } from "@/context/CursorContext";
+import { transition1 } from "@/utils/transitions";
 
 
 function Portfolio() {
+  const {mouseEnterHandler,mouseLeaveHandler} = useContext(CursorContext)
   const projects = [
     {
       title:"e-commerce",
@@ -106,7 +110,14 @@ function Portfolio() {
             >
                 {projects?.map(project => (
                     <SwiperSlide key={project.title} className="overflow-hidden rounded-xl bg-transparent">
-                      <div className={`group relative w-full h-full p-10 ${project.bg} backdrop-blur-lg `}>
+                      <motion.div 
+                      initial={{opacity:0, y:"-50%",scale:.5}}
+                      animate={{opacity:1, y:0,scale:1}}
+                      exit={{opacity:0, y: "-50%",scale:.1}}
+                      transition={transition1}
+                      onMouseEnter={mouseEnterHandler}
+                      onMouseLeave={mouseLeaveHandler}
+                      className={`group relative w-full h-full p-10 ${project.bg} backdrop-blur-lg `}>
                         {/* bg-gradient-to-l from-${project.color}-500 to-${project.color}-600 */}
                         <div className={`img_container ${project.rotate} relative w-full h-full m-auto duration-700 ease-in-out rounded-3xl  shadow-2xl shadow-black/50 before:absolute before:z-10 before:rounded-xl before:blur-xl`}>
                           <Image 
@@ -119,7 +130,7 @@ function Portfolio() {
                           <div className="">{project.category}</div>
                           <div className={`${project.color}`}>{project.title}</div>
                         </div>
-                      </div>
+                      </motion.div>
                     </SwiperSlide>
                 ))}
             </Swiper>

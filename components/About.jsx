@@ -12,7 +12,7 @@ import { transition1 } from '@/utils/transitions';
 function About() {
   const [openModal,setOpenModal] = useState(false)
   return (
-    <div className="animation-fadeUp border h-5/6 flex xs:items-start justify-center md:items-center">
+    <div className="animation-fadeUp h-5/6 flex xs:items-start justify-center md:items-center">
       <div className="flex-center flex-wrap w-full h-full  md:w-4/5 gap-x-4">
         {/* image */}
         <motion.div

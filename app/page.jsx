@@ -12,7 +12,6 @@ import './swiper/swiper.scss'
 import Contact from "@/components/Contact";
 import {CursorContext} from "@/context/CursorContext";
 import {motion} from 'framer-motion'
-import { transition1 } from "@/utils/transitions";
 export default function Page() {
   const [vantaEffect, setVantaEffect] = useState(0);
   const [currentPage,setCurrentPage] = useState('home')
