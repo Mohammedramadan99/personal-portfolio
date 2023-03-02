@@ -18,67 +18,11 @@ import { useContext, useState } from "react";
 import {motion} from 'framer-motion' 
 import { CursorContext } from "@/context/CursorContext";
 import { transition1 } from "@/utils/transitions";
-
+import Link from "next/link";
 
 function Portfolio() {
   const {mouseEnterHandler,mouseLeaveHandler} = useContext(CursorContext)
-  const projects = [
-    {
-      title:"e-commerce",
-      img:ecommerce_img,
-      description:"lorem",
-      category:"full-stack project",
-      fromColor:"from-orange-400",
-      toColor:"to-orange-500",
-      color:"text-orange-600",
-      bg:"bg-orange-600/10",
-      rotate:"img_container_rotate1"
-    },
-    {
-      title:"social media",
-      img:sm_img,
-      description:"lorem",
-      category:"full-stack project",
-      fromColor:"from-yellow-400",
-      toColor:"to-yellow-500",
-      color:"text-yellow-600",
-      bg:"bg-yellow-600/10",
-      rotate:"img_container_rotate3"
-    },
-    {
-      title:"blog",
-      img:blog_img,
-      description:"lorem",
-      category:"full-stack project",
-      fromColor:"from-green-400",
-      toColor:"to-green-500",
-      color:"text-green-600",
-      bg:"bg-green-600/10",
-      rotate:"img_container_rotate2"
-    },
-    {
-      title:"moz portfolio 1",
-      img:portfolio_img,
-      description:"lorem",
-      category:"full-stack project",
-      fromColor:"from-rose-400",
-      toColor:"to-rose-500",
-      color:"text-rose-600",
-      bg:"bg-rose-600/10",
-      rotate:"img_container_rotate3"
-    },
-    {
-      title:"moz portfolio 2",
-      img:portfolio_img,
-      description:"lorem",
-      category:"full-stack project",
-      fromColor:"from-sky-400",
-      toColor:"to-sky-500",
-      color:"text-sky-600",
-      bg:"bg-sky-600/10",
-      rotate:"img_container_rotate2"
-    },
-  ]
+
   const [hoverItem,setHoverItem] = useState(false)
   return (
     <div className='animation-fadeUp w-screen  h-4/5 flex-center '>
@@ -110,7 +54,8 @@ function Portfolio() {
             >
                 {projects?.map(project => (
                     <SwiperSlide key={project.title} className="overflow-hidden rounded-xl bg-transparent">
-                      <motion.div 
+                      <motion.Link
+                      href={`/projectDetails/${project.id}`}
                       initial={{opacity:0,scale:0}}
                       animate={{opacity:1,scale:1}}
                       exit={{opacity:0,scale:.1}}
@@ -130,7 +75,7 @@ function Portfolio() {
                           <div className="">{project.category}</div>
                           <div className={`${project.color}`}>{project.title}</div>
                         </div>
-                      </motion.div>
+                      </motion.Link>
                     </SwiperSlide>
                 ))}
             </Swiper>
