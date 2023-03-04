@@ -27,60 +27,90 @@ function Portfolio() {
     {
       title:"e-commerce",
       img:ecommerce_img,
-      description:"lorem",
+      description:{
+        p1:"e-commerce website with Dashboard based on Modern design with React Next.js aiming at high code quality & SEO",
+        p2:"we have secure payment and wonderful dashboard for Admin that show you how your store is performing in the previous month , the Latest Transactions and more"
+      },
       category:"full-stack project",
+      techs:["Next.js","Sass","Node.js","MongoDB","MUI Tables"],
       fromColor:"from-orange-400",
       toColor:"to-orange-500",
       color:"text-orange-600",
       bg:"bg-orange-600/10",
-      rotate:"img_container_rotate1"
+      rotate:"img_container_rotate1",
+      code:"code",
+      demo:"s",
+      video:"s"
     },
     {
       title:"social media",
       img:sm_img,
-      description:"lorem",
+      description:{
+        p1:"Social media website with Modern interactive design with React Next.js aiming at high code quality & SEO.",
+        p2:"you have the ability to post and interact with others, add comments, follow and more"
+      },
       category:"full-stack project",
+      techs:["Next.js","Sass","Node.js","MongoDB"],
       fromColor:"from-yellow-400",
       toColor:"to-yellow-500",
       color:"text-yellow-600",
       bg:"bg-yellow-600/10",
-      rotate:"img_container_rotate3"
+      rotate:"img_container_rotate3",
+      code:"",
+      demo:"",
+      video:""
     },
     {
       title:"blog",
       img:blog_img,
-      description:"lorem",
+      description:{},
       category:"full-stack project",
+      techs:["Next.js","Sass","Node.js","MongoDB"],
       fromColor:"from-green-400",
       toColor:"to-green-500",
       color:"text-green-600",
       bg:"bg-green-600/10",
-      rotate:"img_container_rotate2"
+      rotate:"img_container_rotate2",
+      code:"",
+      demo:"",
+      video:""
     },
     {
       title:"moz portfolio 1",
       img:portfolio_img,
-      description:"lorem",
+      description:{
+        p1:"portfolio website that represents skills, projects, and about page to introduce yourself"
+      },
       category:"full-stack project",
+      techs:["Next.js","Sass","Node.js","MongoDB"],
       fromColor:"from-rose-400",
       toColor:"to-rose-500",
       color:"text-rose-600",
       bg:"bg-rose-600/10",
-      rotate:"img_container_rotate3"
+      rotate:"img_container_rotate3",
+      code:"",
+      demo:"",
+      video:""
     },
+    
     {
       title:"moz portfolio 2",
       img:portfolio_img,
-      description:"lorem",
+      description:{},
       category:"full-stack project",
+      techs:["Next.js","Sass","Node.js","MongoDB"],
       fromColor:"from-sky-400",
       toColor:"to-sky-500",
       color:"text-sky-600",
       bg:"bg-sky-600/10",
-      rotate:"img_container_rotate2"
+      rotate:"img_container_rotate2",
+      code:"",
+      demo:"",
+      video:""
     },
   ]
 
+  
   const [showDetails,setShowDetails] = useState(false)
   const [projectDetails,setProjectDetails] = useState({})
   const showDetailsHandler = project => {
@@ -143,7 +173,7 @@ function Portfolio() {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            {showDetails && <ProjectDetails/> }
+            {showDetails && <ProjectDetails projectDetails={projectDetails} />}
         </div>
       </div>
     </div>
