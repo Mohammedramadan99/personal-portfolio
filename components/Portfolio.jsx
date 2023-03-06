@@ -111,10 +111,10 @@ function Portfolio() {
   ]
 
   
-  const [showDetails,setShowDetails] = useState(false)
+  const [showDetails,setShowDetails] = useState("none")
   const [projectDetails,setProjectDetails] = useState({})
   const showDetailsHandler = project => {
-    setShowDetails(true)
+    setShowDetails("show")
     setProjectDetails(project)
   }
   return (
@@ -173,7 +173,7 @@ function Portfolio() {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            {showDetails && <ProjectDetails projectDetails={projectDetails} />}
+            <ProjectDetails showDetails={showDetails} setShowDetails={setShowDetails} projectDetails={projectDetails} />
         </div>
       </div>
     </div>
