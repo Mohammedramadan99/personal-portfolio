@@ -18,7 +18,6 @@ import { useContext, useState } from "react";
 import {motion} from 'framer-motion' 
 import { CursorContext } from "@/context/CursorContext";
 import { transition1 } from "@/utils/transitions";
-import Link from "next/link";
 import ProjectDetails from "./ProjectDetails";
 
 function Portfolio() {
@@ -38,9 +37,9 @@ function Portfolio() {
       color:"text-orange-600",
       bg:"bg-orange-600/10",
       rotate:"img_container_rotate1",
-      code:"code",
-      demo:"s",
-      video:"s"
+      code:"https://github.com/Mohammedramadan99/mozEcommerce",
+      // demo:"s",
+      // video:"s"
     },
     {
       title:"social media",
@@ -56,9 +55,8 @@ function Portfolio() {
       color:"text-yellow-600",
       bg:"bg-yellow-600/10",
       rotate:"img_container_rotate3",
-      code:"",
-      demo:"",
-      video:""
+      code:"https://github.com/Mohammedramadan99/mozsocialmedianext13",
+      demo:"https://mozsocialmedianext13-l2vw7dow6-mohammedramadan99.vercel.app",
     },
     {
       title:"blog",
@@ -71,9 +69,9 @@ function Portfolio() {
       color:"text-green-600",
       bg:"bg-green-600/10",
       rotate:"img_container_rotate2",
-      code:"",
-      demo:"",
-      video:""
+      code:"https://github.com/Mohammedramadan99/Moz-blog",
+      // demo:"",
+      // video:""
     },
     {
       title:"moz portfolio 1",

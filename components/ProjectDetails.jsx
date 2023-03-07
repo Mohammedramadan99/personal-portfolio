@@ -1,6 +1,7 @@
 import { transition1 } from '@/utils/transitions'
 import {motion} from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 function ProjectDetails({projectDetails,showDetails,setShowDetails}) {
   const {
     title,
@@ -63,9 +64,9 @@ function ProjectDetails({projectDetails,showDetails,setShowDetails}) {
               {/* buttons */}
               <div className="flex flex-wrap my-6 gap-x-4">
                 {/* {demo && <div className="px-10 py-3 bg-white/95 backdrop-blur-xl text-main_color font-bold capitalize rounded-lg hover:bg-white/90 transition-all">demo</div>} */}
-                {demo && <div className="px-3 py-2 text-xs bg-white/95 backdrop-blur-xl text-main_color font-bold capitalize rounded-lg -skew-y-6 hover:bg-white/90 hover:-translate-y-2 transition-all">demo</div>}
-                <div className="px-3 py-2 text-xs bg-white/95 backdrop-blur-xl text-main_color font-bold capitalize rounded-lg -skew-y-6 hover:bg-white/90 hover:-translate-y-2 transition-all">github</div>
-                {video && <div className="px-3 py-2 text-xs bg-white/95 backdrop-blur-xl text-main_color font-bold capitalize rounded-lg -skew-y-6 hover:bg-white/90 hover:-translate-y-2 transition-all">youtube</div>}
+                {demo && <Link href={demo} className="px-3 py-2 text-xs bg-white/95 backdrop-blur-xl text-main_color font-bold capitalize rounded-lg -skew-y-6 hover:bg-white/90 hover:-translate-y-2 transition-all">demo</Link>}
+                {code && <Link href={code} className="px-3 py-2 text-xs bg-white/95 backdrop-blur-xl text-main_color font-bold capitalize rounded-lg -skew-y-6 hover:bg-white/90 hover:-translate-y-2 transition-all">github</Link>}
+                {video && <Link href={video} className="px-3 py-2 text-xs bg-white/95 backdrop-blur-xl text-main_color font-bold capitalize rounded-lg -skew-y-6 hover:bg-white/90 hover:-translate-y-2 transition-all">youtube</Link>}
               </div>
           </motion.div>
         </div>
