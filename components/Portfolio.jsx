@@ -116,11 +116,11 @@ function Portfolio() {
     setProjectDetails(project)
   }
   return (
-    <div className='animation-fadeUp w-screen relative  h-4/5 flex-center'>
+    <div className='animation-fadeUp w-screen relative h-full md:h-4/5 flex-center'>
       <div className="flex flex-col w-screen md:w-[90%] lg:w-4/5 gap-x-4 h-96">
         <h1 className='text-3xl font-extrabold capitalize'>creative <span className='text-main_color'>portfolio</span></h1>
         <div className="mt-20">
-        <Swiper
+          <Swiper
                 // slidesPerView={3}
                 spaceBetween={30}
                 slidesPerView={1}
@@ -170,8 +170,8 @@ function Portfolio() {
                       </motion.div>
                     </SwiperSlide>
                 ))}
-            </Swiper>
-            <ProjectDetails showDetails={showDetails} setShowDetails={setShowDetails} projectDetails={projectDetails} />
+          </Swiper>
+          <ProjectDetails showDetails={showDetails} setShowDetails={setShowDetails} projectDetails={projectDetails} />
         </div>
       </div>
     </div>
